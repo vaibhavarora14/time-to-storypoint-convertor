@@ -1,0 +1,29 @@
+{
+  "name": "hours-to-storypoint-convertor",
+  "version": "0.0.0",
+  "description": "Helps in converting hours to JIRA story points",
+  "scripts": {
+    "prebuild": "rm -rf dist .cache .parcel-cache",
+    "prewatch": "yarn prebuild",
+    "build:tailwind": "tailwindcss build src/index.scss -c ./tailwind.config.js -o dist/index.scss",
+    "copy": "cp src/manifest.json dist/ && mkdir dist/images  && cp images/* dist/images/",
+    "watch": "NODE_ENV=development yarn build:tailwind && yarn copy && parcel watch --no-hmr src/*.{js,html,css,scss}",
+    "build": "NODE_ENV=production yarn build:tailwind && yarn copy && parcel build src/*.{js,html,css,scss}",
+    "zip": "rm -rf sp-convertor-extension.zip && zip -r sp-convertor-extension.zip ./dist",
+    "package": "yarn build && yarn zip"
+  },
+  "author": "varora1406@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "@material/top-app-bar": "^14.0.0",
+    "crx-hotreload": "^1.0.6",
+    "tailwindcss": "^3.0.24"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.6.0",
+    "@tailwindcss/forms": "^0.5.2",
+    "autoprefixer": "^10.4.7",
+    "parcel": "^2.0.0-rc.0",
+    "postcss-import": "^14.1.0"
+  }
+}

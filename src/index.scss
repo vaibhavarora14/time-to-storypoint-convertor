@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.field {
+  @apply block w-full rounded-lg py-1;
+}
+
+.btn {
+  @apply font-bold py-2 px-4 rounded flex items-center border border-gray-400;
+}
+.btn:hover {
+  @apply bg-gray-100;
+}
+.btn-blue {
+  @apply bg-blue-500 text-white border-none;
+}
+.btn-blue:hover {
+  @apply bg-blue-700;
+}

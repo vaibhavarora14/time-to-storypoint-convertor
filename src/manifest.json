@@ -1,0 +1,19 @@
+{
+    "name": "Time-StoryPoint Convertor",
+    "description": "Helps in converting your time into story points",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "index.html"
+    },
+    "icons": {
+        "16": "images/logo-16.png",
+        "24": "images/logo-24.png",
+        "32": "images/logo-32.png",
+        "64": "images/logo-64.png",
+        "128": "images/logo-128.png"
+    }
+}
